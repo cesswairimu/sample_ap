@@ -8,6 +8,7 @@ gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'pry-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -37,9 +38,6 @@ gem 'sqlite3'
 
 gem 'spring'	 
 end
-group :development do
-  gem 'web-console'
-end
 
 group :production do
 	gem 'pg'
@@ -52,6 +50,11 @@ gem 'minitest-reporters'
 end
 
 group :development do
+  gem 'web-console'
+  gem 'guard-minitest'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rails'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   
   gem 'listen', '~> 3.0.5'
