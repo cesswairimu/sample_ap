@@ -26,4 +26,19 @@ class StaticPagesControllerTest < ActionController::TestCase
 
   end
 
+  test "should get cv" do 
+  	get :cv
+  	assert_response :success
+  	assert_select "title", "CV | Ruby on rails Tutorial Sample App"
+  	assert_select "h1", "CURRICULUM VITAE"
+  	assert_select "h2" , "PERSONAL PROFILE"
+  	assert_select "td" , "Nationality"
+  	assert_select "li", "Singing" 
+  	assert_select "footer" ,"Copyright Ceciliah Wairimu @cessmbuguar@gmail.com"
+  	assert_select "li", "Participating in charity programs"
+  	# assert_select "footer", "Copyright Ceciliah Wairimu @cessmbuguar@gmail.com"
+
+  	end
+
+
 end
