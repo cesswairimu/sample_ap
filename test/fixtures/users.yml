@@ -1,4 +1,4 @@
-cess:
-name: Lawrence
-email: lar@gmail.com
-password_digest: <%= User.digest('password') %>
+Lawrence:
+   name:  Lawrence
+   email:  lar@gmail.com
+   password_digest:  <%= User.digest('password') %>
