@@ -5,19 +5,20 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     @user = users(:Example)
   end
 
-  # # test "micropost interface" do
-  # #   log_in_as(@user)
-  # #   get root_path
-  # #   # assert_select 'div.pagination'
-  # # # assert_select 'input[type=text]'
-  # #     post microposts_path, micropost: { content: "" }
-  # #     assert_select 'div#error_explanation'
-  # #   content = "This micropost really ties the room together"
-  # #   picture = fixture_file_upload('test/fixtures/rails.png', 'image/png')
-  #   assert_difference 'Micropost.count', 1 do
+  # test "micropost interface" do
+  #   log_in_as(@user)
+  #   get root_path
+  #   assert_select 'div.pagination'
+  #     assert_select 'input[type=text]'
+  #     post microposts_path, micropost: { content: "" }
+  #     assert_select 'div#error_explanation'
+  #     content = "This micropost really ties the room together"
+  #     picture = fixture_file_upload('test/fixtures/rails.png', 'image/png')
+  #     assert_difference 'Micropost.count', 1 do
   #     post microposts_path, micropost: { content: content, picture: picture }
   #   end
-  #   assert picture.picture?
+  #   e
+  #    assert picture.picture?
   #   follow_redirect!
   #   assert_match content, response.body
   #   assert_select 'a',  'delete'
