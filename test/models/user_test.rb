@@ -38,5 +38,16 @@ test "associated microposts should be destroyed" do
 	@user.destroy
   end
  end
+ test "should unfollow a user" do 
+ Example = users(:Example)
+ Lawrence = users(:Lawrence)
+ assert_not Example.following?(Lawrence)
+ Example.follow(Lawrence)
+ assert Example.following?(Lawrence)
+ assert Lawrence.followers.include?(Example)
+ Example.unfollow(Lawrence)
+ assert_not Example.following?(Lawrence)
+end
+
 end
 

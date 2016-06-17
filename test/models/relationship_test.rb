@@ -5,7 +5,7 @@ class RelationshipTest < ActiveSupport::TestCase
   	@relationship =Relationship.new(follower_id: 1, followed_id: 2)
   end
   test "should be valid " do 
-  	assert_not @relationship.valid?
+  	assert @relationship.valid?
   end
   test "should require a follower_id" do 
   	assert_not @relationship.valid?
