@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   
   def setup
-@user = User.new(name: "Example User", email: "user@example.com", 
+@user = User.new(name: "example User", email: "user@example.com", 
 					password: "foobar", password_confirmation: "foobar")
 end
 
@@ -38,15 +38,15 @@ test "associated microposts should be destroyed" do
 	@user.destroy
   end
  end
- test "should unfollow a user" do 
- Example = users(:Example)
- Lawrence = users(:Lawrence)
- assert_not Example.following?(Lawrence)
- Example.follow(Lawrence)
- assert Example.following?(Lawrence)
- assert Lawrence.followers.include?(Example)
- Example.unfollow(Lawrence)
- assert_not Example.following?(Lawrence)
+ test "should follow and unfollow a user" do 
+ example = users(:example)
+ lawrence = users(:lawrence)
+ assert_not example.following?(lawrence)
+ example.follow(lawrence)
+ assert example.following?(lawrence)
+ assert lawrence.followers.include?(example)
+ example.unfollow(lawrence)
+ assert_not example.following?(lawrence)
 end
 
 end

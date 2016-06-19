@@ -2,12 +2,16 @@ require 'test_helper'
 
 class RelationshipTest < ActiveSupport::TestCase
   def setup
-  	@relationship =Relationship.new(follower_id: 1, followed_id: 2)
+    example = users(:example)
+    lawrence = users(:lawrence)
+  	@relationship =Relationship.new(follower_id: example.id, followed_id: lawrence.id)
   end
   test "should be valid " do 
+    # binding.pry
   	assert @relationship.valid?
   end
   test "should require a follower_id" do 
+    @relationship.follower_id = nil
   	assert_not @relationship.valid?
   end
   test "should require a followed_id" do 
@@ -15,14 +19,14 @@ class RelationshipTest < ActiveSupport::TestCase
   	assert_not @relationship.valid?
   end
   test "should follow and unfollow a user" do  
-  	Example = users(:Example)
-    Lawrence = users(:Lawrence)
-    assert_not Example.following?(Lawrence)
-    Example.follow(Lawrence)
-    assert Example.following?(Lawrence)
-    assert Lawrence.followers.include?(Example)
-    Example.unfollow(Lawrence)
-    assert_not Example.following?(Lawrence)
+  	example = users(:example)
+    lawrence = users(:lawrence)
+    assert_not example.following?(lawrence)
+    example.follow(lawrence)
+    assert example.following?(lawrence)
+    assert lawrence.followers.include?(example)
+    example.unfollow(lawrence)
+    assert_not example.following?(lawrence)
 end
 test "should be followed and unfollowed" do 
 	end

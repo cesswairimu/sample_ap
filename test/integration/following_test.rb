@@ -2,8 +2,8 @@ require 'test_helper'
 
 class FollowingTest < ActionDispatch::IntegrationTest
   def setup
-  	@user = users(:Example)
-    @other = users(:Lawrence)
+  	@user = users(:example)
+    @other = users(:lawrence)
   	log_in_as (@user)
   end
   test "following page" do 

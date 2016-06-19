@@ -1,12 +1,12 @@
-Example:
-    name:   Example   User
+example:
+    name:   example   User
     email:  example@railstutorial.org
     password_digest:  <%= User.digest('password') %>
     admin: true
     activated: true
     activated_at: <%= Time.zone.now %>
-Lawrence:
-   name:  Lawrence
+lawrence:
+   name:  lawrence
    email:  lar@gmail.com
    password_digest:  <%= User.digest('password') %>
    activated: true
