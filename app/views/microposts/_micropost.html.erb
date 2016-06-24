@@ -2,6 +2,7 @@
 <%# link_to(micropost.user, size: 50), micropost.user %>
 <span class="user"><%= link_to micropost.user.name, micropost.user %> </span>
 <span class="content"> 
+<div class ="pagination"
 	<%= micropost.content %>
 	<%= image_tag micropost.picture.url if micropost.picture? %>
 </span>
@@ -11,4 +12,6 @@
 			data: { confirm: "You sure?" } %>
 <% end%>
 </span>
+</span>
+</div>
 </li>
